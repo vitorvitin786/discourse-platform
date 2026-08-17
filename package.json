@@ -1,0 +1,30 @@
+{
+  "name": "discourse-platform",
+  "version": "0.1.0",
+  "description": "A modern, high-performance communication and community platform",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "db:migrate": "npm run -w @discourse/server db:migrate",
+    "db:seed": "npm run -w @discourse/server db:seed",
+    "db:reset": "npm run -w @discourse/server db:reset",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "turbo": "latest",
+    "typescript": "^5.0.0"
+  }
+}
